@@ -15,6 +15,7 @@ model Product {
   created_at DateTime @default(now())
 
   @@map("products")
+  ProductCategory ProductCategory[]
 }
 
 model Category {
@@ -22,4 +23,16 @@ model Category {
   name String
 
   @@map("categories")
+  ProductCategory ProductCategory[]
+}
+
+model ProductCategory {
+  id            String @id @default(uuid())
+  id_product    String
+  id_category   String
+
+  product       Product @relation(fields: [id_product], references: [id])
+  category      Category @relation(fields: [id_category], references: [id])
+
+  @@map("products_categories")
 }
