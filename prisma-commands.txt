@@ -1,0 +1,7 @@
+Useful commands for prisma
+
+👉️ npx prisma generate : check if a migration wasn't sync with database
+👉️ npx prisma db pull: sync "prisma.schemas" to be equal database
+👉️ npx prisma db push: sync your database with "prisma.schemas"
+👉️ npx prisma studio: client to see your models on database
+
